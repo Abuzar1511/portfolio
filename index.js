@@ -1,0 +1,29 @@
+$(document).ready(function () {
+    var headerDivHeight = $(".main-header-div").innerHeight();
+    $(".main-header-div>div:nth-child(1), .name-and-tagline").css({ "height": headerDivHeight });
+
+    var aboutMeHTML = ('<h2>My journey: From Sales to Learning and Development</h2> <div class="h-devider"></div> <p> I began my professional journey in pharmaceutical sales and marketing. Despite achieving success in this field, I constantly felt a pull towards helping my team become more efficient and high performing. After dedicating 10 years to sales, I discovered my true calling in learning and development (L&D). Since 2010, L&D has been my passion and driving force. </p> <p> In 2015, I took on a new challenge, expanding my role into HR L&D. This journey was filled with countless trials, errors, and failed projects, along with moments of triumph and growth. Through tears, perseverance, and hard work, I earned a master’s degree in HR, along with certifications in L&D, AI, and instructional design. </p> <p> Today, my mission is to help individuals and teams build fulfilling careers in learning and development. I am passionate about empowering L&D professionals to drive performance and build capabilities within businesses. My goal is to support organizations in running L&D as a strategic and impactful business unit. </p> <p> Join me on this journey to transform L&D into a powerhouse of growth and success. Together, we can build a brighter future for all professionals in this field. </p>');
+    var counselling = ('<h2>L&D Counselling for HR and Non-HR Professionals</h2> <div class="h-devider"></div> <p> I offer specialized L&D counselling services tailored for both HR and non-HR professionals. Whether you are looking to enhance your skills in learning and development or are completely new to the field, my counselling sessions are designed to guide you on your journey. </p> <p> <b>For HR Professionals:</b><br> Learn how to design and implement effective training programs, learning paths, talent development and foster a culture of continuous learning, and align L&D strategies with business goals. </p> <p> <b>For Non-HR Professionals:</b><br> Discover the world of learning and development and how it can enhance your career. My counselling will help you transition smoothly into the L&D field and equip you with the tools to succeed. </p> <p><a href="">Click here to book the counselling session.</a></p> <p><b>30 minutes counselling session:</b><br> <ul> <li>Pre-call questionnaire </li> <li>30 minutes deep discussion on What, Why and How of your needs</li> <li>Recording of the session</li> <li>Action items and a follow-up through written communication channels.</li> </ul> </p>');
+    var mentoring = ("<h2>Mentoring and Coaching for L&D professionals</h2> <div class='h-devider'></div> <p> Whether you're just starting in L&D or looking to advance your career, my guidance will help you navigate the challenges and opportunities in this field. </p> <p> Benefit from my years of experience and insights in L&D. Through personalized mentoring, I will share best practices, provide career advice, and help you develop the skills needed to excel. Together, we will identify your career goals, create a roadmap for success, and work on building your confidence and competence in L&D. </p> <p> My coaching services focus on enhancing your performance and achieving specific professional objectives. We will work on developing your leadership skills, improving your training programs, and driving organizational performance through effective L&D strategies. </p> <p> Join me in this journey to elevate your career in Learning and Development. Let’s work together to create impactful learning experiences and drive performance excellence. </p> <p><a href='#'>Click here to book the counselling session.</a></p>");
+    var training = ('<h2>Train the Trainer for L&D (HR and Non-HR)</h2> <div class="h-devider"></div> <p> I provide specialized Train-the-Trainer (TTT) programs for L&D professionals focused on sales training across major sectors. Enhance your training capabilities and drive sales excellence within your organization through our comprehensive programs. </p> <p>Our programs cover a wide range of essential sales training topics</p> <p> <b>Service Excellence: </b>Equip your team with the skills to deliver exceptional service and exceed customer expectations. </p> <p> <b>Customer-Centric Approach: </b>Learn how to foster a customer-first mindset and improve customer satisfaction and loyalty. </p> <p> <b>Developing Professional Relations: </b>Build strong, lasting professional relationships that drive sales success and business growth. </p> <p> Join our TTT program to gain the expertise needed to train and develop top-performing sales teams. Empower your organization with the knowledge and skills to achieve sales excellence. </p> <p> You will get the full training deck along with the facilitator notes and all of the performance tools which you can use in your trainings. </p>');
+
+    $(".close-popup").click(function () {
+        $(".popup-bg").css({ "background": "rgba(255, 255, 255, 0)" });
+        $(".popup-box, .popup-bg").hide("normal");
+        $(".popup-content").empty();
+    });
+    $(".popup-show").click(function () {
+        $(".popup-bg").css({ "background": "rgba(255, 255, 255, 0.7)" });
+        $(".popup-box, .popup-bg").show("normal");
+        var popUpData = $(this).attr("popup-data");
+        if (popUpData == "about-me") {
+            $(".popup-content").append(aboutMeHTML);
+        } else if (popUpData == "counselling") {
+            $(".popup-content").append(counselling);
+        } else if (popUpData == "mentoring") {
+            $(".popup-content").append(mentoring);
+        } else if (popUpData == "training") {
+            $(".popup-content").append(training);
+        }
+    });
+});
